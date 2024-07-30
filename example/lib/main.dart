@@ -55,19 +55,18 @@ class _MyAppState extends State<MyApp> {
                 ),
                 IntlPhoneField(
                   focusNode: focusNode,
-                  decoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                  ),
+                  decoration: InputDecoration(counter: Container()),
                   languageCode: "en",
                   onChanged: (phone) {
                     print(phone.completeNumber);
                   },
+                  flagsButtonMargin: EdgeInsets.only(left: 8),
+                  flagsButtonPadding: EdgeInsets.zero,
                   onCountryChanged: (country) {
                     print('Country changed to: ' + country.name);
                   },
+                  disableLengthCheck: false,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
                 SizedBox(
                   height: 10,
