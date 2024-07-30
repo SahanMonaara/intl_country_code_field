@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl_phone_field/helpers.dart';
+import 'package:intl_country_code_field/helpers.dart';
 
 import './countries.dart';
 import './phone_number.dart';
