@@ -259,9 +259,6 @@ class IntlPhoneField extends StatefulWidget {
   /// See [dropdownColor] of [DropdownButton]
   final Color? dropdownColor;
 
-  /// See [icon] of [DropdownButton]
-  final Widget? icon;
-
   /// See [iconDisabledColor] of [DropdownButton]
   final Color? iconDisabledColor;
 
@@ -334,7 +331,6 @@ class IntlPhoneField extends StatefulWidget {
     this.isDense = false,
     this.underline,
     this.dropdownColor,
-    this.icon,
     this.iconDisabledColor,
     this.iconEnabledColor,
     this.iconSize = 24.0,
@@ -492,7 +488,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       hint: widget.hint,
       disabledHint: widget.disabledHint,
       onTap: widget.onTap,
-      icon: widget.icon,
+      icon: widget.dropdownIcon,
       iconSize: widget.iconSize,
       iconDisabledColor: widget.iconDisabledColor,
       iconEnabledColor: widget.iconEnabledColor,
@@ -538,12 +534,6 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   style: widget.dropdownTextStyle,
                 ),
               ),
-              if (widget.enabled &&
-                  widget.showDropdownIcon &&
-                  widget.dropdownIconPosition == IconPosition.trailing) ...[
-                const SizedBox(width: 4),
-                widget.dropdownIcon,
-              ],
             ],
           ),
         ),
