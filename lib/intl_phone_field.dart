@@ -486,6 +486,10 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   }
 
   Widget _buildNewFlagButton() {
+    List<DropdownMenuItem<Country>>? items = countries
+        .map((country) => DropdownMenuItem<Country>(
+            value: country, child: _buildDefaultMenuItem(country)))
+        .toList();
     return DropdownButton<Country>(
       hint: widget.hint,
       disabledHint: widget.disabledHint,
@@ -505,10 +509,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
           });
         }
       },
-      items: countries
-          .map((country) => DropdownMenuItem<Country>(
-              value: country, child: _buildDefaultMenuItem(country)))
-          .toList(),
+      items: items,
       value: _selectedCountry,
       itemHeight: widget.itemHeight,
     );
